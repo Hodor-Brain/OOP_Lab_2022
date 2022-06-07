@@ -1,0 +1,2 @@
+<app-add-doctor *ngIf="hasRole" (onAddDoctor)="addDoctor($event)"></app-add-doctor>
+<app-doctor-item *ngFor="let doctor of doctors" [doctor]="doctor"></app-doctor-item>

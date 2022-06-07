@@ -1,0 +1,6 @@
+<div class="prescription col-6 border border-success m-2 mb-3 rounded details" routerLink="/prescription/{{ prescription?.id }}">
+  <h3 class="d-flex align-middle justify-content-between">Patient name: {{prescription?.patient?.name}}</h3>
+  <h3 class="d-flex align-middle justify-content-between">Doctor name: {{prescription?.doctor?.name}}</h3>
+  <p>Diagnosis: {{prescription?.diagnosis}}</p>
+  <p>Treatment: {{prescription?.treatment}}</p>
+</div>

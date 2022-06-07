@@ -1,0 +1,47 @@
+<form class="add-prescription-form row g-3 mb-3" (ngSubmit)="onSubmit()" [formGroup]="form">
+
+  <div class="col-md-4 form-group">
+    <label for="patient" class="form-label control-label required">Patient</label>
+    <select name="patient" class="form-control" id="patient" [(ngModel)]="patient" formControlName="patient">
+      <option *ngFor="let patient of patients" [ngValue]="patient">{{patient?.name}}</option>
+    </select>
+    <app-field-error-display
+      [displayError]="isFieldValid('patient')"
+      errorMsg="Please choose patient">
+    </app-field-error-display>
+  </div>
+
+  <div class="col-md-4 form-group">
+    <label for="doctor" class="form-label control-label required">Doctor</label>
+    <select name="doctor" class="form-control" id="doctor" [(ngModel)]="doctor" formControlName="doctor">
+      <option *ngFor="let doctor of doctors" [ngValue]="doctor">{{doctor?.name}}</option>
+    </select>
+    <app-field-error-display
+      [displayError]="isFieldValid('doctor')"
+      errorMsg="Please choose doctor">
+    </app-field-error-display>
+  </div>
+
+  <div class="col-md-4 form-group">
+    <label for="diagnosis" class="form-label control-label required">Diagnosis</label>
+    <input type="text" class="form-control" name="diagnosis" id="diagnosis" [(ngModel)]="diagnosis" formControlName="diagnosis"/>
+    <app-field-error-display
+      [displayError]="isFieldValid('diagnosis')"
+      errorMsg="Please enter a valid diagnosis">
+    </app-field-error-display>
+  </div>
+
+  <div class="col-md-4 form-group">
+    <label for="treatment" class="form-label control-label required">Treatment</label>
+    <input type="number" class="form-control" name="treatment" id="treatment" [(ngModel)]="treatment" formControlName="treatment"/>
+    <app-field-error-display
+      [displayError]="isFieldValid('treatment')"
+      errorMsg="Please enter a valid treatment">
+    </app-field-error-display>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary mr-lg-4" [disabled]="!form.valid">Add</button>
+    <button class="btn btn-secondary" (click)="reset()">Reset</button>
+  </div>
+</form>

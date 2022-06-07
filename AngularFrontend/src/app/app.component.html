@@ -1,0 +1,14 @@
+<div class="container">
+  <nav class="navbar bg-dark mb-4">
+    <a href="/Frontend/src" class="nav__link" data-link>Main page</a>
+
+    <a href="/patients" class="nav__link" data-link>Patients</a>
+    <a href="/doctors" class="nav__link" data-link>Doctors</a>
+    <a href="/prescriptions" class="nav__link" data-link>Prescriptions</a>
+    <button class="nav__link btn-dark" (click)="logout()">Logout</button>
+
+    <a href="/rocket" class="nav__link" data-link>Cure!</a>
+
+  </nav>
+  <router-outlet></router-outlet>
+</div>

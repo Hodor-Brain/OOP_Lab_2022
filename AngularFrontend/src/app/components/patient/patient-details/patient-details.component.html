@@ -1,0 +1,21 @@
+<div class="patient col-6 border border-primary mb-3 rounded">
+  <h1 class="d-flex align-middle justify-content-between">Name: {{patient?.name}}
+    <fa-icon (click)="onDelete(patient.id)" [ngStyle]="{'color': 'red'}" [icon]="faTimes" class="delete"></fa-icon>
+  </h1>
+</div>
+
+<form *ngIf="hasRole" class="add-patient-form row g-3" (ngSubmit)="onUpdate()" [formGroup]="form">
+  <div class="col-md-4 form-group">
+    <label for="name" class="form-label control-label required">New name</label>
+    <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" formControlName="name"/>
+    <app-field-error-display
+      [displayError]="isFieldValid('name')"
+      errorMsg="Please enter a valid patient name">
+    </app-field-error-display>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-success mr-lg-4" [disabled]="!form.valid">Update</button>
+    <button class="btn btn-secondary" (click)="reset()">Reset</button>
+  </div>
+</form>

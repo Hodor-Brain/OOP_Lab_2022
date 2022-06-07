@@ -1,0 +1,3 @@
+<app-add-prescription *ngIf="hasRole" (onAddPrescription)="addPrescription($event)"></app-add-prescription>
+<app-prescription-item *ngFor="let prescription of prescriptions"
+                         [prescription]="prescription"></app-prescription-item>

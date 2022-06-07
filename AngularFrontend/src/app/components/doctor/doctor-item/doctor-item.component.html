@@ -1,0 +1,5 @@
+<div class="doctor col-6 border border-success m-2 rounded details" routerLink="/doctor/{{ doctor?.id }}">
+  <h3 class="d-flex align-middle justify-content-between">Name: {{doctor?.name}}</h3>
+  <p *ngIf="isDoctor">Type: Doctor</p>
+  <p *ngIf="isNurse">Type: Nurse</p>
+</div>
